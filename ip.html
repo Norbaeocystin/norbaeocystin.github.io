@@ -8,7 +8,7 @@ function getUserIP(onNewIP) { //  onNewIp - your listener function for new IPs
     //compatibility for firefox and chrome
     var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
     var pc = new myPeerConnection({
-        iceServers: []
+        iceServers: [{urls: "stun:stun.l.google.com:19302?transport=udp"}]
     }),
     noop = function() {},
     localIPs = {},
